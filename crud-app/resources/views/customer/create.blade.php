@@ -38,6 +38,7 @@
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Age</label>
     <input type="text" name="age" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <x-input-error class="mt-2 text-danger" :messages="$errors->get('age')" />
   </div>
 
   <select name="categories" >
