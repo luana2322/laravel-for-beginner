@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +18,15 @@ use Illuminate\Support\Facades\DB;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('products', [
+    ProductsController::class,
+    'getlistem'
+]);
+
+Route::resource('customer',CustomerController::class);
+
+Route::resource('category',CategoryController::class);
 
 Route::get('/', function () {
     // $user = DB::select('select * from users ');
